@@ -72,14 +72,11 @@ figure
   font-size: 1.2em;
   transition: 1s;
 }
-.icon-facebook:hover
-{
-  font-size: 2em;
-}
-
-.icon-whatsapp:hover
-{
-  font-size: 2em;
+.mediaContainer {
+  position: fixed;
+  top: 25vh;
+  right: 0;
+  z-index: 1;
 }
 
 .facebookButton
@@ -90,10 +87,12 @@ figure
   display: block;
   line-height: 3em;
   text-align: center;
-  position: fixed;
-  top: 25vh;
-  right: 0;
-  z-index: 1;
+
+
+}
+
+.facebookButton:hover {
+  width: 5em;
 }
 
 .whatsappButton 
@@ -105,9 +104,12 @@ figure
   line-height: 3em;
   text-align: center;
   position: fixed;
-  top: 42vh;
   right: 0;
   z-index: 1;
+}
+
+.whatsappButton:hover {
+  width: 5em;
 }
 
 header
@@ -540,10 +542,19 @@ h4
 }
 
 @media screen and (max-width: 768px) {
-.container.hero {
-  font-size: 15px;
-  position: relative;
-  grid-template-columns: 1fr;
+  .mediaContainer {
+    top: 30vh;
+  }
+  .icon-facebook {
+    font-size: .8em;
+  }
+  .icon-whatsapp {
+    font-size: .8em;
+  }
+  .container.hero {
+    font-size: 15px;
+    position: relative;
+    grid-template-columns: 1fr;
   }
   .hero-details {
     position: absolute;
@@ -553,15 +564,15 @@ h4
     justify-content: center;
     height: 100%;
   }
-.hero-copy h1 {
-  margin: 0;
-  font-size: 2.4em;
-  text-align: center;
-}
-.hero-copy img {
-  width: 7%;
-  margin: 0 auto;
-}
+  .hero-copy h1 {
+    margin: 0;
+    font-size: 2.4em;
+    text-align: center;
+  }
+  .hero-copy img {
+    width: 7%;
+    margin: 0 auto;
+  }
 .hero-icon {
   /* align-items: flex-start; */
   padding-left: 0;
@@ -596,14 +607,14 @@ h4
 }
 }
 @media screen and (max-width: 480px) {
+  .mediaContainer {
+    top: 35vh;
+  }
   .header figure img{
     margin-left: 0;
   }
   .header nav ol {
     padding-left: 0;
-  }
-  .facebookButton {
-    top: 30vh;
   }
   .container.portfolio {
     grid-template: repeat(6, auto) / 1fr;
@@ -639,12 +650,6 @@ h4
 }
 
 @media screen and (max-width: 360px) {
-  .facebookButton {
-    top: 38vh;
-  }
-  .whatsappButton {
-    top: 50vh;
-  }
   .portfolio-details h2 {
     margin-bottom: .4em;
     font-size: 1.9em;
